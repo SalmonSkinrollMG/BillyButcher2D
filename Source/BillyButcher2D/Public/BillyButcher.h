@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "PaperCharacter.h"
+#include "InputActionValue.h"
 #include "BillyButcher.generated.h"
 
 /**
@@ -14,17 +15,31 @@ class BILLYBUTCHER2D_API ABillyButcher : public APaperCharacter
 {
 	GENERATED_BODY()
 
+protected:
+	virtual void BeginPlay() override;
 
-	// Input Actions
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
-	class UInputMappingContext* DefaultMappingContext;
+	// Movement input function
+	void Move(const FInputActionValue& Value);
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	// Jump to input function
+	virtual void Jump() override;
+	void RotateController() const;
+
+	// Enhanced Input System
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
+	class UInputMappingContext* InputMappingContext;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
 	class UInputAction* MoveAction;
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
 	class UInputAction* JumpAction;
 
-	// Movement Input Handlers
-	void Move(const FInputActionValue& Value);
+public:
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+
+
+private:
+	const FVector MovementDirection{FVector(1.0 , 0.0 ,0.0)};
 	
 };
