@@ -38,8 +38,8 @@ void ABillyButcher::Move(const FInputActionValue& Value)
 {
 	
 	float Movement = Value.Get<float>();
-	RotateController();
-	AddMovementInput(MovementDirection, Movement);
+	RotateController(); // Flipping the character left or right based on movement component acceleration.
+	AddMovementInput(MovementDirection, FMath::RoundToFloat(Movement)); //Rounding to float to eliminate pressure sensitivity.
 }
 
 void ABillyButcher::Jump()
