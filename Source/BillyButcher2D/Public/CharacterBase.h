@@ -48,4 +48,7 @@ public:
 
 	UPROPERTY(BlueprintReadWrite , EditAnywhere, Category="AttackTraceVariable")
 	FRotator TraceRotation{FRotator::ZeroRotator};
+
+	UPROPERTY(BlueprintReadWrite , EditAnywhere, Category="Debug")
+	bool bDrawDebug{false};
 };

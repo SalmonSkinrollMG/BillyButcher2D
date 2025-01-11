@@ -1,7 +1,7 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Enemies/CharacterBase.h"
+#include "CharacterBase.h"
 
 #include "GameFramework/CharacterMovementComponent.h"
 
@@ -54,8 +54,7 @@ AActor* ACharacterBase::TraceAttack()
 	AActor* HitActor{nullptr};
     FVector Start = TraceStartPosition->GetComponentLocation();
     FVector End = TraceEndPosition->GetComponentLocation();
-
-    // Setup collision object query parameters
+	
     FCollisionObjectQueryParams ObjectQueryParams;
     ObjectQueryParams.AddObjectTypesToQuery(UEngineTypes::ConvertToCollisionChannel(CollisionObjectType));
 
@@ -78,17 +77,20 @@ AActor* ACharacterBase::TraceAttack()
     );
 
 	HitActor = OutHit.GetActor();
-    // Debug visualization
-    FColor TraceColor = bHit ? FColor::Green : FColor::Red;
-    DrawDebugBox(GetWorld(), Start, TraceExtend, TraceRotation.Quaternion(), TraceColor, false, 1.0f);
-    DrawDebugBox(GetWorld(), End, TraceExtend, TraceRotation.Quaternion(), TraceColor, false, 1.0f);
-    DrawDebugLine(GetWorld(), Start, End, TraceColor, false, 1.0f);
-	
-    if (bHit)
-    {
-    	DrawDebugBox(GetWorld(), OutHit.Location, TraceExtend, TraceRotation.Quaternion(), TraceColor, false, 1.0f);
-        UE_LOG(LogTemp, Warning, TEXT("TraceAttack: Hit Actor: %s"), *OutHit.GetActor()->GetName());
-    }
+
+	if(bDrawDebug)
+	{
+	    FColor TraceColor =FColor::Green;
+	    DrawDebugBox(GetWorld(), Start, TraceExtend, TraceRotation.Quaternion(), TraceColor, false, 1.0f);
+	    DrawDebugBox(GetWorld(), End, TraceExtend, TraceRotation.Quaternion(), TraceColor, false, 1.0f);
+	    DrawDebugLine(GetWorld(), Start, End, TraceColor, false, 1.0f);
+		if (bHit)
+		{
+			TraceColor = FColor::Red;
+			DrawDebugBox(GetWorld(), OutHit.Location, TraceExtend, TraceRotation.Quaternion(), TraceColor, false, 1.0f);
+			UE_LOG(LogTemp, Warning, TEXT("TraceAttack: Hit Actor: %s"), *OutHit.GetActor()->GetName());
+		}
+	}
     else
     {
         UE_LOG(LogTemp, Warning, TEXT("TraceAttack: No hit detected."));
