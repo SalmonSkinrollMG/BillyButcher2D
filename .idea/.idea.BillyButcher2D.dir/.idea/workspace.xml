@@ -9,22 +9,16 @@
   <component name="ChangeListManager">
     <list default="true" id="06997906-8de5-49b2-85d0-68856cfe55b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BillyButcher2D.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BillyButcher2D.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI/BTTask_Attack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI/BTTask_Attack.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BillyButcher2D.uproject.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/BillyButcher2D.uproject.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/BillyButcher/BP_BillyButcher.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BillyButcher/BP_BillyButcher.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/CharacterBase/BP_CharacterBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/CharacterBase/BP_CharacterBase.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Enemies/EnemyBase/BP_EnemyBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Enemies/EnemyBase/BP_EnemyBase.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Enemies/Skeleton/Animation/ABP_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Enemies/Skeleton/Animation/ABP_Skeleton.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Enemies/Skeleton/BP_SkeletonEnemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Enemies/Skeleton/BP_SkeletonEnemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Interface/BPI_Enemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Interface/BPI_Enemy.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Interface/BPI_Character.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Interface/BPI_Character.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Interface/BPI_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Interface/BPI_Player.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Blueprints/Notifies/AN_ZD_CharacterAttactTrace.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Notifies/AN_ZD_CharacterAttactTrace.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Notifies/AN_ZD_EnableControl.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Notifies/AN_ZD_EnableControl.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/Maps/CentralCity.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/CentralCity.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BillyButcher2D/Private/BillyButcher.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BillyButcher2D/Private/Enemies/CharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BillyButcher2D/Private/Enemies/CharacterBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BillyButcher2D/Private/Enemies/Enemy_Skeleton.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BillyButcher2D/Public/BillyButcher.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BillyButcher2D/Public/Enemies/CharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/BillyButcher2D/Public/Enemies/CharacterBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/BillyButcher2D/Public/Enemies/Enemy_Skeleton.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +33,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://1" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Core/Public/Math/UnrealPlatformMathSSE4.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.4/Engine/Source/Runtime/Engine/Public/CollisionQueryParams.h" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -169,7 +164,9 @@
       <workItem from="1736368451878" duration="236000" />
       <workItem from="1736392583933" duration="1605000" />
       <workItem from="1736437680274" duration="1974000" />
-      <workItem from="1736574486752" duration="822000" />
+      <workItem from="1736574486752" duration="2976000" />
+      <workItem from="1736695281881" duration="832000" />
+      <workItem from="1736696498731" duration="3812000" />
     </task>
     <servers />
   </component>
