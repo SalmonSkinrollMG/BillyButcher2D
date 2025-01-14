@@ -98,3 +98,61 @@ AActor* ACharacterBase::TraceAttack()
 	return HitActor;
 }
 
+AActor* ACharacterBase::TraceExplosion()
+{
+	AActor* HitActor = nullptr;
+
+	// Get the actor's center as the starting point
+	FVector Center = GetActorLocation();
+
+	FCollisionObjectQueryParams ObjectQueryParams;
+	ObjectQueryParams.AddObjectTypesToQuery(UEngineTypes::ConvertToCollisionChannel(CollisionObjectType));
+
+	// Setup query parameters
+	FCollisionQueryParams QueryParams;
+	QueryParams.bTraceComplex = false;
+	QueryParams.AddIgnoredActor(this);
+
+	FHitResult OutHit;
+
+	// Perform the radial sphere trace
+	bool bHit = GetWorld()->SweepSingleByObjectType(
+		OutHit,
+		Center,
+		Center,
+		FQuat::Identity, 
+		ObjectQueryParams,
+		FCollisionShape::MakeSphere(ExplosionRadius),
+		QueryParams
+	);
+
+
+	if (bHit)
+	{
+		HitActor = OutHit.GetActor();
+		if (HitActor)
+		{
+			if (bDrawDebug)
+			{
+				FColor HitColor = FColor::Red;
+				DrawDebugSphere(GetWorld(), OutHit.ImpactPoint, 10.0f, 12, HitColor, false, 1.0f);
+			}
+			UE_LOG(LogTemp, Warning, TEXT("TraceExplosion: Hit Actor: %s"), *HitActor->GetName());
+		}
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("TraceExplosion: No actors hit in the explosion radius."));
+	}
+	
+	if (bDrawDebug)
+	{
+		FColor TraceColor = bHit ? FColor::Red : FColor::Green;
+		DrawDebugSphere(GetWorld(), Center, ExplosionRadius, 24, TraceColor, false, 1.0f);
+	}
+
+	return HitActor;
+}
+
+
+

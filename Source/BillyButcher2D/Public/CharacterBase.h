@@ -20,6 +20,7 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	USceneComponent* TraceStartPosition;
+	
 	UPROPERTY(EditAnywhere)
 	USceneComponent* TraceEndPosition;
 
@@ -38,6 +39,9 @@ public:
 
 	UFUNCTION(BlueprintCallable , Category="CharacterFunctions")
 	AActor* TraceAttack();
+	
+	UFUNCTION(BlueprintCallable , Category="CharacterFunctions")
+	AActor* TraceExplosion();
 
 
 	UPROPERTY(BlueprintReadWrite ,EditAnywhere, Category="AttackTraceVariable")
@@ -48,6 +52,9 @@ public:
 
 	UPROPERTY(BlueprintReadWrite , EditAnywhere, Category="AttackTraceVariable")
 	FRotator TraceRotation{FRotator::ZeroRotator};
+
+	UPROPERTY(BlueprintReadWrite , EditAnywhere, Category="AttackTraceVariable")
+	float ExplosionRadius{5.0f};
 
 	UPROPERTY(BlueprintReadWrite , EditAnywhere, Category="Debug")
 	bool bDrawDebug{false};
